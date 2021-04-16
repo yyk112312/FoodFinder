@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;">
+{% block contents %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="ExerciseDetail, Sample Product">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>ExerciseDetail</title>
+
+  </head>
+  <body>
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <h1 class="u-text u-text-1" align="center">ExerciseDetail</h1>
+      </div>
+    <section class="u-align-center u-clearfix u-section-2" id="carousel_5ffe">
+      <div class="u-clearfix u-sheet u-sheet-1"><!--product--><!--product_options_json--><!--{"source":""}--><!--/product_options_json--><!--product_item-->
+        <div class="u-container-style u-expanded-width u-product u-product-1">
+          <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-top-sm u-valign-top-xs u-container-layout-1"><!--product_image-->
+            <img alt="" class="u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-product-control u-image-1" src="{{ exercise.eximg.url }}"><!--/product_image-->
+            <div class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
+              <div class="u-container-layout u-valign-middle u-container-layout-2">
+                <div class="u-border-3 u-border-palette-4-base u-line u-line-horizontal u-line-1"></div><!--product_title-->
+                <h2 class="u-custom-font u-font-merriweather u-product-control u-text u-text-1">
+                  <a class="u-product-title-link"><!--product_title_content-->{{ exercise.name }}<!--/product_title_content--></a>
+                </h2><!--/product_title--><!--product_price-->
+                <div class="u-custom-font u-font-merriweather u-product-control u-product-price u-product-price-1">
+                  <div class="u-price-wrapper u-spacing-10"><!--product_old_price-->
+                    <div class="u-hide-price u-old-price" style="text-decoration: line-through !important;" wfd-invisible="true"><!--product_old_price_content-->$12<!--/product_old_price_content--></div><!--/product_old_price--><!--product_regular_price-->
+                    <div class="u-price u-text-palette-4-base" style="font-size: 1.5rem; font-weight: 700;"><!--product_regular_price_content-->{{ user.username }} 님의 몸무게 : {{ user.weight }} kg<!--/product_regular_price_content--></div><!--/product_regular_price-->
+                  </div>
+                </div><!--/product_price--><!--product_content-->
+                  {% if user.weight <= 59 and user.weight > 0 %}
+                <div class="u-product-control u-product-desc u-text u-text-2"><!--product_content_content-->
+                  <p>사용자 몸무게별 소모칼로리 : {{ exercise.calories1 }}</p><!--/product_content_content-->
+                    {% elif user.weight <= 71 and user.weight >= 59 %}
+                    <p>사용자 몸무게별 소모칼로리 : {{ exercise.calories2 }}</p>
+                    {% elif user.weight <= 82 and user.weight >= 71 %}
+                    <p>사용자 몸무게별 소모칼로리 : {{ exercise.calories3 }}</p>
+                    {% else %}
+                    <p>사용자 몸무게별 소모칼로리 : {{ exercise.calories4 }}</p>
+                    {% endif %}
+                    <p>1kg당 소모 칼로리 : {{ exercise.hour }}</p>
+                    <p><a href="https://www.youtube.com/results?search_query={{ exercise.name }}">관련운동영상</a></p>
+                    <p><a href="/exercise">목록으로</a></p>
+                </div><!--/product_content--><!--product_button--><!--options_json--><!--{"clickType":"add-to-cart","content":""}--><!--/options_json-->
+              </div>
+            </div>
+          </div>
+        </div><!--/product_item--><!--/product-->
+      </div>
+    </section>
+    
+
+  </body>
+{% endblock contents %}
+</html>

@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;">
+{% block contents %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="사진업로드">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Pic</title>
+  </head>
+<body>
+      <div class="u-align-center u-clearfix u-sheet u-sheet-1">
+        <h2 class="u-text u-text-1">사진업로드</h2>
+          <br>
+          <br>
+            <form action="{% url 'imagecla:upload_file' %}"  method="POST" enctype="multipart/form-data" >
+    {%  csrf_token  %}
+    {{ form }}
+
+        <p class="u-text u-text-2">내가 현재 먹고 있는 음식의 칼로리는?</p>
+        <center><input type="submit" class="u-btn u-btn-round u-button-style u-hover-grey-10 u-palette-5-light-2 u-radius-19 u-btn-1" value="사진 업로드">
+        </input></center>
+                </form>
+      </div>
+  </body>
+{% endblock contents %}
+</html>

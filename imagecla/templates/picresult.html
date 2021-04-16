@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;">
+{% block contents %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="사진 분석 결과">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>picresult</title>
+  </head>
+<br>
+<br>
+<br>
+  <body>
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div data-image-width="1000" data-image-height="1080">
+                <div class="u-container-layout u-valign-middle u-container-layout-1"></div>
+                  <img src="/{{img}}" width="600" height="500">
+              </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-20 u-white u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                  <h2 class="u-text u-text-1" >사진 분석 결과</h2>
+                  <p class="u-text u-text-2" >{{ user.username }}회원님이 입력하신 음식은 {{ resultimg }}입니다.</p>
+                  <a href="{% url 'imagecla:upload_file' %}" class="u-btn u-btn-round u-button-style u-hover-grey-10 u-palette-4-light-2 u-radius-25 u-text-black u-text-hover-palette-2-base u-btn-1" >다시하기
+                  </a>
+                    {% if resultimg == '짜장면' %}
+<h3>짜장면의 칼로리는 300입니다</h3>
+{% elif resultimg == '피자' %}
+<h3>피자의 칼로리는 1000입니다</h3>
+{% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </body>
+<br>
+<br>
+<br>
+{% endblock contents %}
+</html>

@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;">
+{% block contents %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Design Online">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>foodboardDetail</title>
+
+  </head>
+    <section class="u-align-center u-clearfix u-section-1" id="sec-65a2">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-container-style u-group u-group-1">
+          <div class="u-container-layout u-valign-middle u-container-layout-1">
+            <h2 class="u-align-center u-text u-text-2" data-animation-name="zoomIn" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="Down">{{ board.name }}</h2>
+            <br>
+            <br>
+            <table class="u-table-entity u-table-entity-1">
+              <tr style="height: 65px;">
+                <td class="u-table-cell">1회 제공량</td>
+                <td class="u-table-cell">탄수화물</td>
+                <td class="u-table-cell">단백질</td>
+                <td class="u-table-cell">지방</td>
+              </tr>
+                <tr style="height: 65px;">
+                <td class="u-table-cell">{{ board.once }}g</td>
+                <td class="u-table-cell">{{ board.cabor }}</td>
+                <td class="u-table-cell">{{ board.protein }}</td>
+                  <td class="u-table-cell">{{ board.fat }}</td>
+              </tr>
+          </table>
+          </div>
+              </tbody>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </body>
+{% endblock contents %}
+</html>

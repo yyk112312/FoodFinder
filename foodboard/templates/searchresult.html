@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html style="font-size: 16px;">
+{% block contents %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>result</title>
+
+  </head>
+<body>
+  <center><h3>검색결과</h3></center></header>
+<br><br><br><br><br><br>
+    <section class="u-align-center u-clearfix u-white u-section-1" id="carousel_0766" >
+          <center><a href="{% url 'foodboard:food_list' %}">뒤로가기</a></center>
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+            <div class="u-container-layout u-similar-container u-container-layout-1" align="left">
+                        {% for post in posts %}
+                <p>이름 : <a href="{% url 'foodboard:foodboard_detail' post.id %}">{{ post.name }}</a></p>
+                {% empty %}
+                    no results.
+        {% endfor %}
+        </div>
+      </div>
+    </section>
+
+  </body>
+{% endblock contents %}
+</html>

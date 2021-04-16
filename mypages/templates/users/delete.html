@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% block contents %}
+<div class="alert alert-dismissible alert-danger" align="center">
+  <strong>회원 삭제</strong>
+    <h5>회원 정보를 정말로 삭제하시겠습니까?</h5>
+    <form action="{% url 'mypages:delete' %}" method="POST">
+        {% csrf_token %}
+        비밀번호 : <input type="password" name="pw_del">
+        <input class="btn btn-warning" type="submit" value="회원탈퇴">
+    </form>
+</div>
+<br>
+<br>
+<br>
+{% endblock contents %}
