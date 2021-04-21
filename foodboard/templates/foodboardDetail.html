@@ -22,6 +22,7 @@
             <table class="u-table-entity u-table-entity-1">
               <tr style="height: 65px;">
                 <td class="u-table-cell">1회 제공량</td>
+                <td class="u-table-cell">칼로리</td>
                 <td class="u-table-cell">탄수화물</td>
                 <td class="u-table-cell">단백질</td>
                 <td class="u-table-cell">지방</td>
@@ -29,12 +30,46 @@
                 <tr style="height: 65px;">
                 <td class="u-table-cell">{{ board.once }}g</td>
                 <td class="u-table-cell">{{ board.cabor }}</td>
+                <td class="u-table-cell">{{ board.calories }}</td>
                 <td class="u-table-cell">{{ board.protein }}</td>
                   <td class="u-table-cell">{{ board.fat }}</td>
               </tr>
+              <div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+<center>
+<canvas id="chart" width="500" height="400"></canvas>
+<script>
+
+      let ctx = document.getElementById("chart").getContext("2d");
+      let chart = new Chart(ctx, {
+          type: "bar",
+          data: {
+             labels: ["1회 제공량","칼로리", "탄수화물(g)", "단백질(g)", "지방(g)"],
+             datasets: [
+                {
+                  label: "함유량 (g)",
+                  backgroundColor: "#79AEC8",
+                  borderColor: "#417690",
+                  data:[{{ board.once }}, {{ board.calories }}, {{ board.cabor }} ,{{ board.protein }}, {{ board.fat }} ]
+                }
+             ]
+          },
+          options: {
+            responsive :false,
+             title: {
+                text: "{{ board.name }} 그래프",
+                display: true
+             }
+          }
+          });
+
+
+  </script>
+</center>
+              </div>
           </table>
           </div>
-              </tbody>
           </div>
         </div>
       </div>
