@@ -17,7 +17,7 @@ class PhotoList(ListView):
 
 class PhotoCreate(CreateView):
     model = Photo
-    fields = ['author','text', 'image']
+    fields = ['text', 'image']
     template_name_suffix = '_create'
     success_url = '/photo'
 
