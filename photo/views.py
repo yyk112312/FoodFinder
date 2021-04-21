@@ -37,7 +37,7 @@ class PhotoCreate(CreateView):
 
 class PhotoUpdate(UpdateView):
     model = Photo
-    fields = ['author','text', 'image']
+    fields = ['text', 'image']
     template_name_suffix = '_update'
     # success_url = '/'
 
