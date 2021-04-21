@@ -33,6 +33,7 @@
                   <p class="u-text u-text-2" >{{ user.username }}회원님이 입력하신 음식은 {{ resultimg }}입니다.</p>
                   <a href="{% url 'imagecla:upload_file' %}" class="u-btn u-btn-round u-button-style u-hover-grey-10 u-palette-4-light-2 u-radius-25 u-text-black u-text-hover-palette-2-base u-btn-1" >다시하기
                   </a>
+                    <a href="/foodlist/%7Burl%20'result/'%20%%7D?query={{ resultimg }}" class="u-btn u-btn-round u-button-style u-hover-grey-10 u-palette-4-light-2 u-radius-25 u-text-black u-text-hover-palette-2-base u-btn-1">{{ resultimg }} 검색</a>
                     {% if resultimg == '짜장면' %}
 <h3>짜장면의 칼로리는 300입니다</h3>
 {% elif resultimg == '피자' %}
