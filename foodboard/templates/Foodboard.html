@@ -35,6 +35,7 @@
               <tr style="height: 65px;">
                 <td class="u-table-cell">이름</td>
                 <td class="u-table-cell">1회 제공량</td>
+                <td class="u-table-cell">칼로리</td>
                 <td class="u-table-cell">탄수화물</td>
                 <td class="u-table-cell">단백질</td>
                 <td class="u-table-cell">지방</td>
@@ -43,9 +44,10 @@
               <tr style="height: 65px;">
                 <td class="u-table-cell"><a href="{% url 'foodboard:foodboard_detail' foodboard.id %}">{{ foodboard.name }}</a></td>
                 <td class="u-table-cell">{{ foodboard.once }}g</td>
+                <td class="u-table-cell">{{ foodboard.calories }}g</td>
                 <td class="u-table-cell">{{ foodboard.cabor }}</td>
                 <td class="u-table-cell">{{ foodboard.protein }}</td>
-                  <td class="u-table-cell">{{ foodboard.fat }}</td>
+                <td class="u-table-cell">{{ foodboard.fat }}</td>
               </tr>
             {% endfor %}
             </tbody>

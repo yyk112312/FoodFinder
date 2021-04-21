@@ -32,9 +32,11 @@
                 <td class="u-table-cell">{{ board.cabor }}</td>
                 <td class="u-table-cell">{{ board.calories }}</td>
                 <td class="u-table-cell">{{ board.protein }}</td>
-                  <td class="u-table-cell">{{ board.fat }}</td>
+                <td class="u-table-cell">{{ board.fat }}</td>
               </tr>
+
               <div>
+                <a href="{% url 'foodboard:food_list' %}">식품 목록으로</a>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
 <center>
@@ -66,6 +68,7 @@
 
 
   </script>
+
 </center>
               </div>
           </table>
@@ -73,6 +76,7 @@
           </div>
         </div>
       </div>
+
     </section>
 
   </body>
