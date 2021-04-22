@@ -1,23 +1,34 @@
 {% extends 'index.html' %}
 {% load static %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 {% block contents %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+<style>
+  ul{
+    list-style-type: none;
+    text-align: center;
+    margin-left: 1200px;
+    margin-right: 1200px;
+    width: 200;
+  }
+</style>
 <center>
 <form method="post">
   <h3>칼로리 계산기  <img src="{% static 'main/cal.png' %} " width="60" height="60"></h3>
   <br>
-
   {% csrf_token %}
+  <div class="form-group">
   {% for field in form %}
+
   <div>{{field}}</div>
 {% endfor %}
-
+ </div>
   <input style="width: 273px;" type="submit" class="btn btn-success" value="계산하기"> <br>
 
 
 </form>
 <br><br>
+
 <form action="diet" method="POST">
   {% csrf_token %}
   <input type="hidden" name="Calories" value="{{Calorie}}">
@@ -32,6 +43,8 @@
     <li class="list-group-item d-flex justify-content-between align-items-center">지방 : {{Fats}}g<br></li>
   </ul>
 </form>
+
+
   <br>
 
 </div>
