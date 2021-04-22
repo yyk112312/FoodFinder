@@ -1,0 +1,70 @@
+{% extends 'main_app/index.html' %}
+{% block content %}
+{% for msg in messages %}
+  <div class="alert alert-warning mt-1" role="alert">
+    {{ msg }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {% endfor %}
+<div class="container my-4" style="max-width: 50%;">
+  <div class="card py-2 px-4 mb-4">
+<form method="post">
+  {% csrf_token %}
+  <h2 class="text-center">회원 정보</h2>
+    <div class="form-group">
+     <fieldset class="border p-2">
+       <legend class="w-auto">Personalia</legend>
+       <div class="form-row text-center">
+        <div class="form-group col-md-6">
+          <label for="name">이름:</label>
+            <input type="text" readonly class="form-control-plaintext text-center font-weight-bold" id="name" value="{{ user.username }}">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="plan">사이트 이용 목적:</label>
+          <input type="text" readonly class="form-control-plaintext text-center font-weight-bold" id="plan" value="{{ plan_chosen }}">
+        </div>
+      </div>
+     </fieldset>
+    </div>
+   
+    <div class="form-group">
+      <fieldset class="border p-2">
+        <legend class="w-auto">BMI 계산</legend>
+        <div class="form-row text-center">
+         <div class="form-group col-md-6">
+           <label for="bmi">회원님의 BMI:</label>
+           <input type="text" readonly class="form-control-plaintext text-center font-weight-bold" id="bmi" value="{{ bmi }}">
+         </div>
+         <div class="form-group col-md-6">
+           <label for="bmi_cat">BMI 범주:</label>
+           <input type="text" readonly class="form-control-plaintext text-center font-weight-bold" id="bmi_cat" value="{{ bmi_cat }}">
+         </div>
+       </div>
+       <div class="form-group text-center">
+        <label for="ideal_wt">BMI에 따른 이상적인 몸무게:</label>
+        <input type="text" readonly class="form-control-plaintext text-center font-weight-bold" id="ideal_wt" value="{{ ideal_wt_low }} - {{ ideal_wt_high }}">
+      </div>
+       
+      </fieldset>
+     </div>
+
+     <div class="form-group">
+      <fieldset class="border p-2">
+        <legend class="w-auto">목표 중량 설정(kg)</legend>
+        <div class="text-center">
+        <p>달성하고자 하는 체중 목표를 입력합니다</p>
+         <div class="form-group">
+           <label for="bmi">목표 중량:</label>
+           <input type="text" class="form-control text-center" id="bmi" name="target_weight" style="width: 50%;margin: 0 auto;">
+         </div>
+      </fieldset>
+     </div>
+     <div class="text-center">
+       <button type="submit" class="btn btn-primary">Submit</button>
+     </div>
+  </form>
+</div>
+</div>
+{% endblock content %}

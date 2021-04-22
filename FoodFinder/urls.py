@@ -22,11 +22,11 @@ from FoodFinder import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('auth/', include('userslog.urls')),
-    url(r'^$', views.Homeview.as_view(), name='home'),
+    path('main_app/', include("main_app.urls")),
+    path('user/', include("users.urls")),
+    url(r'^$', views.Mainview.as_view(), name='main'),
     url(r'about/', views.Aboutview.as_view(), name='about'),
     path('exercise/', include('exercise.urls')),
-    path('mypages/', include('mypages.urls')),
     path('maps/', include('maps.urls')),
     path('foodlist/', include('foodboard.urls')),
     path('imagecla/', include('imagecla.urls')),

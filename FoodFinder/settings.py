@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'userslog',
     'exercise.apps.ExerciseConfig',
-    'mypages',
+    'main_app.apps.MainAppConfig',
+    'users.apps.UsersConfig',
+    'django_filters',
+    'crispy_forms',
     'maps',
     'foodboard',
     'imagecla',
@@ -140,8 +142,4 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-LOGIN_URL = 'userslog.login'
-AUTH_USER_MODEL = 'userslog.User'
-LOGIN_REDIRECT_URL= 'home'
-LOGOUT_REDIRECT_URL= 'home'
 

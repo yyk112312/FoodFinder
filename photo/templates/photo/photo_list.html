@@ -46,7 +46,7 @@
         <div class="col">
             {% load static %}
             <div class="card" style="">
-                <img src="{% static '' %}" class="card-img-top">
+                <img src="{{ user.profile.image.url }}" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title">{{ user.username }}</h5>
                     <p class="card-text">회원님의 스토리를 확인해보세요!</p>

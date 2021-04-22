@@ -1,0 +1,22 @@
+{% extends 'main_app/index.html' %}
+{% block content %}
+<div>
+    <div class="container my-4" style="max-width: 50%;top: 20%;position: absolute; left: 25%;">
+        <div>
+            <div class="card py-2 px-4 mb-4">
+                <form>
+                    <div class="form-group text-center">
+                        <label for="name"><h2>당신의 예상수치</h2></label>
+                          <input type="text" readonly class="form-control-plaintext text-center font-weight-bold" id="name" value="{{ cal_goal }}" style="font-size: 40px;">
+                  </div>
+                  <div class="text-center">
+                      <a href="{% url 'main' %}" class="btn btn-outline-danger">Got It</a>
+                  </div>
+                  </form>
+                </div>
+        </div>
+      
+    </div>
+</div>
+
+{% endblock content %}

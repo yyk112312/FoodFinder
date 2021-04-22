@@ -1,0 +1,18 @@
+{% extends 'main_app/index.html' %}
+{% load crispy_forms_tags %}
+{% block main %}
+<h2 class="text-center mt-2">먹은 음식을 저장해보세요</h2>
+<div class="container" style="max-width: 50%;">
+    <div class="card py-4 px-4 mb-2">
+        <form method="POST"> 
+            {% csrf_token %}
+            <fieldset class="form-group">
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-info">업데이트</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock main %}

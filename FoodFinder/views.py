@@ -7,10 +7,10 @@ from django.views.generic.base import TemplateView
 from django.views.generic import ListView
 
 
-class Homeview(TemplateView):
-    template_name = 'Home.html'
+class Mainview(TemplateView):
+    template_name = 'Main.html'
     def get_context_data(self, **kwargs):
-        context = super(Homeview, self).get_context_data(**kwargs)
+        context = super(Mainview, self).get_context_data(**kwargs)
         return context
 
 class Aboutview(TemplateView):

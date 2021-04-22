@@ -1,0 +1,17 @@
+{% extends 'main_app/index.html' %}
+{% block main %}
+<div class="container" style="max-width: 50%;">
+    <div class="card py-4 px-4 my-4 bg-light border border-5 border-dark">
+        <form method="POST"> 
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <h2 class="text-center mt-2">음식을 삭제하시겠습니까?({{ food }})?</h2>
+            </fieldset>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-sm btn-outline-danger">삭제</button>
+                <button type="button" class="ml-4 btn btn-sm btn-outline-secondary" onclick="location.href=`{% url 'profile' %}`">취소</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock main %}

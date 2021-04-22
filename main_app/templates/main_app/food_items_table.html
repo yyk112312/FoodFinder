@@ -1,0 +1,31 @@
+<div class="container my-4 text-center"> 
+    <h4><u>{{ Category }}</u></h4>
+</div>
+{% if food_cat_items %}
+  <table class="table table-bordered table-hover container">
+    <thead class="bg-dark text-white">
+      <tr>
+        <th scope="col">번호</th>
+        <th scope="col">음식</th>
+        <th scope="col">횟수</th>
+        <th scope="col">총 칼로리</th>
+      </tr>
+    </thead>
+    <tbody class="bg-light">
+      {% for i in food_cat_items %}
+      <tr class="values">
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ i.name }}</td>
+        <td id="quans">{{ i.quantity }}</td>
+        <td id="cals">{{ i.calories }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <div class="card my-4 container text-center">
+    <div class="card-body">
+      <h5 class="card-title font-weight-bold">아직 음식을 추가하지 않았습니다.{{ Category }}!</h5>
+    </div>
+  </div>
+  {% endif %}

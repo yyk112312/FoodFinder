@@ -1,0 +1,118 @@
+{% extends 'main_app/index.html' %}
+{% block nav %}
+<ul class="navbar-nav mr-auto">
+  <li class="nav-item">
+      <li class="nav-item active">
+              <a class="nav-link" href="{% url 'main' %}">홈으로 <span class="sr-only">(current)</span></a>
+            </li>
+    <a class="nav-link" href="{% url 'home' %}">나의 칼로리 <span class="sr-only">(current)</span></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'profile' %}">회원정보</a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" href="{% url 'select_food' %}">Select Food</Select></a>
+  </li>
+</ul>
+{% endblock nav %}
+{% block main %}
+<h3 class="text-center my-4">추가할 음식을 입력하세요</h3>
+<div class="container card py-2 px-4 mb-4 bg-light" style="max-width: 50%;">
+  <form method="POST">
+    {% csrf_token %}
+    <input class="form-control my-4" type="search" placeholder="Food Item" aria-label="Search" name="food_item"
+      value="{{ food }}">
+    <div class="text-center">
+      <!-- <label for="go">Go</label> -->
+      <input type="submit" class="btn btn-success" name="first" value="Go" id="go">
+    </div>
+  </form>
+</div>
+{% if data %}
+<table class="table table-striped table-bordered container">
+  <thead>
+    <tr>
+      <th scope="col">번호</th>
+      <th scope="col">음식</th>
+      <th scope="col">횟수</th>
+      <th scope="col">Unit</th>
+      <th scope="col">칼로리</th>
+      <th scope="col">단백질</th>
+      <th scope="col">지방</th>
+      <th scope="col">탄수화물</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for i in data %}
+    <tr>
+      <th scope="row">#</th>
+      <td name>{{ i.fields.item_name }}</td>
+      <td>{{ i.fields.nf_serving_size_qty }}</td>
+      <td>{{ i.fields.nf_serving_size_unit }}</td>
+      <td>{{ i.fields.nf_calories }}</td>
+      <td>{{ i.fields.nf_protein }}</td>
+      <td>{{ i.fields.nf_total_fat }}</td>
+      <td>{{ i.fields.nf_total_carbohydrate }}</td>
+      <td>
+        <button type="button" class="btn btn-primary select-btn" data-toggle="modal" data-target="#staticBackdrop"
+          id="{{ forloop.counter }}">
+          Select
+        </button>
+
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="card mb-4 container text-center bg-light">
+  <div class="card-body">
+    <h5 class="card-title font-weight-bold">저장된 음식이 없습니다!</h5>
+  </div>
+</div>
+{% endif %}
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class=" modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">음식 정보</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="food_name">음식 이름:</label>
+            <input type="text" id="food_item" class="form-control" value="{{ food_name }}">
+          </div>
+          <div class="form-group">
+            {{ form.as_p }}
+          </div>
+
+          <div class="modal-footer form-group">
+            <!-- <a href="{% url 'select_food' %}"  class="btn btn-primary" name="second">Submit</a> -->
+            <input type="submit" class="btn btn-primary" name="second" value="Submit">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock main %}
+<!-- {% block script %}
+<script>
+    $(function(){
+    $("#1").click(function(){
+      var myId = $(this).data('id');
+      console.log(myId)
+      // $(".modal-body #food_item").val( myId );
+  });
+});
+  </script>
+{% endblock script %} -->
