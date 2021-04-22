@@ -1,12 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="{% static 'main/style.css' %}">
-<style>
-
-</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 {% block contents %}
 <center>
@@ -30,12 +24,12 @@
   <input type="hidden"name="Proteins" value="{{Proteins}}">
   <input type="hidden"name="Carbs" value="{{Carbs}}">
   <input type="hidden"name="Fats" value="{{Fats}}">
-  <ul class="results"><h5>
-    <li>하루 섭취 칼로리 및 영양소(권장)</li></h5>
-    <li>칼로리(소모) : {{Calorie}} <br></li>
-    <li>단백질 : {{Proteins}}g<br></li>
-    <li>탄수화물 : {{Carbs}}g<br></li>
-    <li>지방 : {{Fats}}g<br></li>
+  <ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center"><h4>하루 섭취 칼로리 및 영양소(권장)</h4></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">칼로리(소모) : {{Calorie}} <br></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">단백질 : {{Proteins}}g<br></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">탄수화물 : {{Carbs}}g<br></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">지방 : {{Fats}}g<br></li>
   </ul>
 </form>
   <br>

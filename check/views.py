@@ -6,7 +6,7 @@ from django.db.models import *
 
 # Create your views here.
 
-def home(request):
+def checkcal(request):
     # When the user clicks on the website, the homepage shows up
     if request.method == 'GET':
         form = CalorieCal(initial={'HeightChoice': 'CM'})

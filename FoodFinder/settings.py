@@ -25,7 +25,7 @@ SECRET_KEY = '=)#)ffv(b$5@u_$c$wyg@5lpl_=u7hi+*$sjv-(dn6a(+h92)z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','34f4219f9d72.ngrok.io']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -143,3 +143,5 @@ STATICFILES_DIRS = [
 LOGIN_URL = 'userslog.login'
 AUTH_USER_MODEL = 'userslog.User'
 LOGIN_REDIRECT_URL= 'home'
+LOGOUT_REDIRECT_URL= 'home'
+
