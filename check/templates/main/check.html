@@ -13,12 +13,12 @@
 <form method="post">
   <h3>칼로리 계산기  <img src="{% static 'main/cal.png' %} " width="60" height="60"></h3>
   <br>
-<h3>
+
   {% csrf_token %}
   {% for field in form %}
   <div>{{field}}</div>
 {% endfor %}
-</h3>
+
   <input style="width: 273px;" type="submit" class="btn btn-success" value="계산하기"> <br>
 
 
@@ -30,8 +30,8 @@
   <input type="hidden"name="Proteins" value="{{Proteins}}">
   <input type="hidden"name="Carbs" value="{{Carbs}}">
   <input type="hidden"name="Fats" value="{{Fats}}">
-  <ul class="results"><h3>
-    <li>하루 섭취 칼로리 및 영양소(권장)</li></h3>
+  <ul class="results"><h5>
+    <li>하루 섭취 칼로리 및 영양소(권장)</li></h5>
     <li>칼로리(소모) : {{Calorie}} <br></li>
     <li>단백질 : {{Proteins}}g<br></li>
     <li>탄수화물 : {{Carbs}}g<br></li>

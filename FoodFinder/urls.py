@@ -30,7 +30,8 @@ urlpatterns = [
     path('maps/', include('maps.urls')),
     path('foodlist/', include('foodboard.urls')),
     path('imagecla/', include('imagecla.urls')),
-    path('photo/', include('photo.urls'))
+    path('photo/', include('photo.urls')),
+    path('check/', include('check.urls'))
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

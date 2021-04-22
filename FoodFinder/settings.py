@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'photo',
     'disqus',
     'django.contrib.sites',
+    'check',
 
 
 ]

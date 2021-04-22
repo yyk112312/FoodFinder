@@ -10,10 +10,21 @@
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
     <title>Pic</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 20%;
+    height: 30%;
+  }
+  </style>
   </head>
 <body>
       <div class="u-align-center u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-text u-text-1">사진업로드</h2>
+        <h2 class="u-text u-text-1">사진업로드     <img src="{% static '/images/camera.png' %} " width="50" height="50"></h2>
           <br>
           <br>
             <form action="{% url 'imagecla:upload_file' %}"  method="POST" enctype="multipart/form-data" >
@@ -21,10 +32,47 @@
     {{ form }}
 
         <p class="u-text u-text-2">내가 현재 먹고 있는 음식의 칼로리는?</p>
-        <center><input type="submit" class="u-btn u-btn-round u-button-style u-hover-grey-10 u-palette-5-light-2 u-radius-19 u-btn-1" value="사진 업로드">
-        </input></center>
+        <center><input type="submit" class="u-btn u-btn-round u-button-style u-hover-grey-10 u-palette-5-light-2 u-radius-19 u-btn-1" value="사진 업로드"></center>
                 </form>
       </div>
+      <br>
+      <br>
+<h4 align="center">음식사진 예시</h4>
+<div id="demo" class="carousel slide" data-ride="carousel" align="center">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/image/pi.jpg" alt="피자" width="500" height="300">
+    </div>
+    <div class="carousel-item">
+      <img src="/image/sp.jpg" alt="스파게티" width="500" height="300">
+    </div>
+    <div class="carousel-item">
+      <img src="/image/bi.jpg" alt="비빔밥" width="500" height="300">
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<br><br><br>
+
   </body>
 {% endblock contents %}
+<br>
+<br>
+<br>
 </html>
