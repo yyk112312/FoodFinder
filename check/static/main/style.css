@@ -1,0 +1,23 @@
+form {
+    margin: auto;
+    padding: 50px;
+    text-align: center;
+    height: 70%;
+    padding-top: 0 0;
+}
+
+button, select, input[type=text],button {
+    overflow: visible;
+    margin: 5px;
+    width: 275px;
+    border: 2px solid;
+    border-radius: 5px;
+}
+ul{
+  list-style-type: none;
+  display: none;
+  padding-left: 0px;
+}
+.Diet{
+  width: 300px;
+}
