@@ -22,10 +22,11 @@
         <div class="u-expanded-width u-table u-table-responsive u-table-1">
           <table class="u-table-entity u-table-entity-1">
             <colgroup>
-              <col width="25%">
-              <col width="25%">
-              <col width="25%">
-              <col width="25%">
+              <col width="20%">
+              <col width="20%">
+              <col width="20%">
+              <col width="20%">
+                <col width="20%">
             </colgroup>
               <form action="{url 'result/' %}" method="get">
     음식검색 : <input type="search" name="query">
@@ -44,7 +45,7 @@
               <tr style="height: 65px;">
                 <td class="u-table-cell"><a href="{% url 'foodboard:foodboard_detail' foodboard.id %}">{{ foodboard.name }}</a></td>
                 <td class="u-table-cell">{{ foodboard.once }}g</td>
-                <td class="u-table-cell">{{ foodboard.calories }}g</td>
+                <td class="u-table-cell">{{ foodboard.calories }}kcal</td>
                 <td class="u-table-cell">{{ foodboard.cabor }}</td>
                 <td class="u-table-cell">{{ foodboard.protein }}</td>
                 <td class="u-table-cell">{{ foodboard.fat }}</td>
