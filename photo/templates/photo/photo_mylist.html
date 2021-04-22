@@ -17,6 +17,7 @@
                <figure class="col-md-4">
                    <div style="width: 18rem;">
                        <a href="{% url 'photo:detail' object.id %}" ><img src="{{object.image.url}}" class="card-img-top" alt="..."></a>
+                       <p align="center">{{ object.created }}</p>
                    </div>
                </figure>
                {% endif %}

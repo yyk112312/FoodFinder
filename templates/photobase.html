@@ -1,17 +1,36 @@
-{% extends 'index.html' %}
-{% block contents %}
-<!DOCTYPE html>
-
+ {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %} {% endblock %}</title>
+    <title>commuity</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Ways to manage sugar, Lower sugar recipes, New ideas to life, Health is the most precious">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link rel="stylesheet" href='{% static "nicepage.css" %}' media="screen">
+<link rel="stylesheet" href='{% static "Home.css" %}' media="screen">
+    <script class="u-script" type="text/javascript" src='{% static "jquery.js" %}' defer=""></script>
+    <script class="u-script" type="text/javascript" src='{% static "nicepage.js" %}' defer=""></script>
+    <meta name="generator" content="Nicepage 3.11.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
 
-<body>
- {% load static %}
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "index.html"
+}</script>
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#a68053">
+    <link rel="canonical" href="index.html">
+    <meta property="og:url" content="index.html">
+</head>
     <style>
     .btn-like{
         display: inline-block;
@@ -55,8 +74,36 @@
     }
 
     </style>
-
-
+  <body class="u-body u-overlap"><header class="u-clearfix u-header u-header" id="sec-46b8"><div class="u-clearfix u-sheet u-sheet-1">
+      <br>
+        <nav class="u-align-left u-menu u-menu-dropdown u-nav-spacing-25 u-offcanvas u-menu-1" data-responsive-from="XL">
+          <div class="menu-collapse">
+            <a class="u-button-style u-nav-link u-text-black" href="#" style="font-size: calc(1em + 20px); padding: 10px 18px;">
+              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7b92"></use></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-7b92" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;" xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
+</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/" style="padding: 8px 0px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/about" style="padding: 8px 0px;">About</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'foodboard:food_list' %}" style="padding: 8px 0px;">Foodboard</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/maps" style="padding: 8px 0px;">Maps</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/exercise" style="padding: 8px 0px;">Exercise</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'imagecla:upload_file' %}" style="padding: 8px 0px;">사진분석</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'photo:index' %}" style="padding: 8px 0px;">커뮤니티</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/check" style="padding: 8px 0px;">칼로리계산기</a>
+</li></ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+  </div>
+  </header>
+<br><br><br><br>
 
     <div align="center">
         <ul>
@@ -95,7 +142,9 @@
         <div class="col"></div>
     </div>
 </div>
+
     {% endif %}
+
 
 {% block content %}
 {% endblock %}
@@ -114,4 +163,3 @@
         crossorigin="anonymous"></script>
 </body>
 </html>
-{% endblock contents %}
