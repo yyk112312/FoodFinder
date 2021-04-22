@@ -1,6 +1,5 @@
 {% extends 'index.html' %}
 {% block contents %}
-<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -60,25 +59,24 @@
 
     <div align="center">
         <ul>
-            <button>
-                <a class="nav-link" href="{% url 'photo:index' %}"> main <span class="sr-only">(current)</span></a>
+            <button class="btn btn-secondary" onclick="location.href='{% url 'photo:index' %}'">
+                main
             </button>
             {% if user.is_authenticated %}
-            <button>
-                <a class="nav-link" href="{% url 'photo:create' %}">사진 올리기<span class="sr-only">(current)</span></a>
+            <button class="btn btn-secondary" onclick="location.href='{% url 'photo:create' %}'">
+                사진올리기
             </button>
-            <button>
-                <a class="nav-link" href="{% url 'logout' %}"> Logout<span class="sr-only">(current)</span></a>
+            <button class="btn btn-secondary" onclick="location.href='{% url 'logout' %}'">
+                로그아웃
             </button>
-            <button>
-                <a class="nav-link" href="{% url 'photo:like_list' %}">좋아요한 사진보기<span class="sr-only">(current)</span></a>
+            <button class="btn btn-secondary" onclick="location.href='{% url 'photo:like_list' %}'">
+                좋아요한 사진보기
             </button>
-            <button>
-                <a class="nav-link" href="{% url 'photo:favorite_list' %}">저장한 사진보기<span class="sr-only">(current)</span></a>
+            <button class="btn btn-secondary" onclick="location.href='{% url 'photo:favorite_list' %}'">
+                저장한 사진보기
             </button>
             {% else %}
-            <button>
-                <a class="nav-link" href="{% url 'login' %}"> Login <span class="sr-only">(current)</span></a>
+            <button class="btn btn-secondary" onclick="location.href='{% url 'login' %}'">Login
             </button>
             {% endif %}
         </ul>

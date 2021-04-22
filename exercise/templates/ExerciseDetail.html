@@ -1,5 +1,4 @@
 {% extends 'index.html' %}
-<!DOCTYPE html>
 {% load static %}
 <html style="font-size: 16px;">
 {% block contents %}
@@ -30,15 +29,15 @@
                 <div class="u-custom-font u-font-merriweather u-product-control u-product-price u-product-price-1">
                   <div class="u-price-wrapper u-spacing-10"><!--product_old_price-->
                     <div class="u-hide-price u-old-price" style="text-decoration: line-through !important;" wfd-invisible="true"><!--product_old_price_content-->$12<!--/product_old_price_content--></div><!--/product_old_price--><!--product_regular_price-->
-                    <div class="u-price u-text-palette-4-base" style="font-size: 1.5rem; font-weight: 700;"><!--product_regular_price_content-->{{ user.username }} 님의 몸무게 : {{ user.weight }} kg<!--/product_regular_price_content--></div><!--/product_regular_price-->
+                    <div class="u-price u-text-palette-4-base" style="font-size: 1.5rem; font-weight: 700;"><!--product_regular_price_content-->{{ user.username }} 님의 몸무게 : {{ user.profile.weight }} kg<!--/product_regular_price_content--></div><!--/product_regular_price-->
                   </div>
                 </div><!--/product_price--><!--product_content-->
-                  {% if user.weight <= 59 and user.weight > 0 %}
+                  {% if user.profile.weight <= 59 and user.profile.weight > 0 %}
                 <div class="u-product-control u-product-desc u-text u-text-2"><!--product_content_content-->
                   <p>사용자 몸무게별 소모칼로리 : {{ exercise.calories1 }}</p><!--/product_content_content-->
-                    {% elif user.weight <= 71 and user.weight >= 59 %}
+                    {% elif user.profile.weight <= 71 and user.profile.weight >= 59 %}
                     <p>사용자 몸무게별 소모칼로리 : {{ exercise.calories2 }}</p>
-                    {% elif user.weight <= 82 and user.weight >= 71 %}
+                    {% elif user.profile.weight <= 82 and user.profile.weight >= 71 %}
                     <p>사용자 몸무게별 소모칼로리 : {{ exercise.calories3 }}</p>
                     {% else %}
                     <p>사용자 몸무게별 소모칼로리 : {{ exercise.calories4 }}</p>

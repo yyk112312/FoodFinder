@@ -14,6 +14,7 @@
            <div class="row">
                {% for object in object_list %}
                {% if object.author == request.user %}
+
                <figure class="col-md-4">
                    <div style="width: 18rem;">
                        <a href="{% url 'photo:detail' object.id %}" ><img src="{{object.image.url}}" class="card-img-top" alt="..."></a>
