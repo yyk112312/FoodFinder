@@ -25,6 +25,7 @@ class MealCategory(models.Model):
 
 class UserFoodItems(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,null=True)
+    userid = models.IntegerField(default=0)
     name = models.CharField(max_length=100,null=True)
     meal_cat = models.ForeignKey(MealCategory,on_delete=models.CASCADE,null=True,default="BreakFast")
     quantity = models.PositiveIntegerField(default=0)

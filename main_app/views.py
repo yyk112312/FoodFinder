@@ -77,48 +77,57 @@ def select_food(request):
     form = FoodDetailsForm()
     form_id1 = request.POST.get("first", False)
     form_id2 = request.POST.get("second", False)
-
+    apikey="9a0cd871b41e45a39e17"
+    startRow=1
+    endRow=15
     if request.method == "POST" and form_id1:
         globals()['food_item'] = []
         food = request.POST.get("food_item")
         if food:
-            ARGS = {
-                "appId": "16aee158",
-                "appKey": "746d5b3d7c4fc8e9120d126c95405665",
-                "query": food,
-                "fields": [
-                    "item_name",
-                    "nf_serving_size_qty",
-                    "nf_serving_size_unit",
-                    "nf_calories",
-                    "nf_protein",
-                    "nf_total_fat",
-                    "nf_total_carbohydrate"
-                ],
-            }
-            url = "https://api.nutritionix.com/v1_1/search/"
+            url = "http://openapi.foodsafetykorea.go.kr/api/"+ apikey+"/I2790/json/"+str(startRow)+"/"+str(endRow)+"/DESC_KOR="+food
             # response = requests.get('https://api.nutritionix.com/v1_1/search/mcdonalds?results=0:20&fields=item_name,brand_name,item_id,nf_calories&appId=16aee158&appKey=746d5b3d7c4fc8e9120d126c95405665').json()
-            response = requests.post(url, json=ARGS)
-            data = json.loads(response.content.decode('utf-8'))
+            response = requests.post(url)
+            data = json.loads(response.content)
+            #print(data)
+            dataset = data['I2790']
+
+            #namedata = data['DESC_KOR']
+            #print(finaldata['DESC_KOR','NUTR_CONT1','NUTR_CONT2','NUTR_CONT3'])
+
             try:
-                query = data["hits"][:1]
+                finaldata = dataset['row']
+                for i in range(len(finaldata)):
+                    query = finaldata[i]
+                    food_name = query['DESC_KOR']
+                    food_cal = query['NUTR_CONT1']
+                    food_pro = query['NUTR_CONT3']
+                    food_fat = query['NUTR_CONT4']
+                    food_carb = query['NUTR_CONT2']
+                    food_qua = query['SERVING_SIZE']
+
+
             except:
                 messages.warning(request, "음식이 존재하지 않습니다!!!")
                 return redirect('select_food')
 
-            food_item.append(query[0])
+            food_item.append(query)
 
-            food_name = query[0]['fields']['item_name']
-            context = {"data": query, "form": form, "food_name": food_name, "food": food}
+
+
+
+            context = {"data": data, "form": form, "food_name": food_name, "food": food, "food_cal":food_cal,"food_pro":food_pro,"food_fat":food_fat,"food_carb":food_carb, 'finaldata':finaldata, 'food_qua':food_qua}
             return render(request, 'main_app/select_food.html', context)
     elif request.method == "POST" and form_id2:
         form = FoodDetailsForm(request.POST)
         try:
-            f_name = globals()['food_item'][0]['fields']['item_name']
-            f_cal = globals()['food_item'][0]['fields']['nf_calories']
-            f_pro = globals()['food_item'][0]['fields']['nf_protein']
-            f_fat = globals()['food_item'][0]['fields']['nf_total_fat']
-            f_carb = globals()['food_item'][0]['fields']['nf_total_carbohydrate']
+            for i in range(len(globals()['food_item'])):
+
+                f_name = globals()['food_item'][i]['DESC_KOR']
+                f_cal = globals()['food_item'][i]['NUTR_CONT1']
+                f_pro = globals()['food_item'][i]['NUTR_CONT3']
+                f_fat = globals()['food_item'][i]['NUTR_CONT4']
+                f_carb = globals()['food_item'][i]['NUTR_CONT2']
+
         except:
             messages.warning(request, "음식을 검색해보세요!!!")
             return redirect('select_food')
@@ -131,7 +140,7 @@ def select_food(request):
                 messages.warning(request, "수량을 입력해주세요!!!")
                 return redirect('select_food')
 
-            f_obj = UserFoodItems(user=request.user, name=f_name, meal_cat=meal, quantity=quan, calories=f_cal,
+            f_obj = UserFoodItems(userid=request.user.id, user=request.user, name=f_name, meal_cat=meal, quantity=quan, calories=f_cal,
                                   fats=f_fat, proteins=f_pro, carbs=f_carb)
             f_obj.save()
 
