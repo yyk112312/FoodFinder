@@ -35,7 +35,7 @@
       <th scope="col">번호</th>
       <th scope="col">음식</th>
       <th scope="col">횟수</th>
-      <th scope="col">Unit</th>
+
       <th scope="col">칼로리</th>
       <th scope="col">단백질</th>
       <th scope="col">지방</th>
@@ -44,16 +44,15 @@
     </tr>
   </thead>
   <tbody>
-    {% for i in data %}
+    {% for i in finaldata %}
     <tr>
-      <th scope="row">#</th>
-      <td name>{{ i.fields.item_name }}</td>
-      <td>{{ i.fields.nf_serving_size_qty }}</td>
-      <td>{{ i.fields.nf_serving_size_unit }}</td>
-      <td>{{ i.fields.nf_calories }}</td>
-      <td>{{ i.fields.nf_protein }}</td>
-      <td>{{ i.fields.nf_total_fat }}</td>
-      <td>{{ i.fields.nf_total_carbohydrate }}</td>
+      <th scope="row"></th>
+      <td name>{{ i.DESC_KOR }}</td>
+      <td>1</td>
+      <td>{{ i.food_cal }}</td>
+      <td>{{ i.food_pro }}</td>
+      <td>{{ i.food_fat }}</td>
+      <td>{{ i.food_carb }}</td>
       <td>
         <button type="button" class="btn btn-primary select-btn" data-toggle="modal" data-target="#staticBackdrop"
           id="{{ forloop.counter }}">
@@ -87,7 +86,7 @@
           {% csrf_token %}
           <div class="form-group">
             <label for="food_name">음식 이름:</label>
-            <input type="text" id="food_item" class="form-control" value="{{ food_name }}">
+            <input type="text" id="food_item" class="form-control" value="{{ finaldata.DESC_KOR }}">
           </div>
           <div class="form-group">
             {{ form.as_p }}

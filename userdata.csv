@@ -1,0 +1,6 @@
+user,name,quantity
+<django.db.models.fields.related_descriptors.ForwardManyToOneDescriptor object at 0x000001FFCD391670>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391760>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391910>
+<django.db.models.fields.related_descriptors.ForwardManyToOneDescriptor object at 0x000001FFCD391670>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391760>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391910>
+<django.db.models.fields.related_descriptors.ForwardManyToOneDescriptor object at 0x000001FFCD391670>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391760>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391910>
+<django.db.models.fields.related_descriptors.ForwardManyToOneDescriptor object at 0x000001FFCD391670>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391760>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391910>
+<django.db.models.fields.related_descriptors.ForwardManyToOneDescriptor object at 0x000001FFCD391670>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391760>,<django.db.models.query_utils.DeferredAttribute object at 0x000001FFCD391910>
