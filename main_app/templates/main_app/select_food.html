@@ -17,8 +17,6 @@
 {% endblock nav %}
 {% block main %}
 <h3 class="text-center my-4">추가할 음식을 입력하세요</h3>
-<center><p>이름을 정확하게 입력해주세요</p></center>
-
 <div class="container card py-2 px-4 mb-4 bg-light" style="max-width: 50%;">
   <form method="POST">
     {% csrf_token %}
@@ -36,8 +34,8 @@
     <tr>
       <th scope="col">번호</th>
       <th scope="col">음식</th>
-      <th scope="col">1회 제공량</th>
-
+      <th scope="col">횟수</th>
+      <th scope="col">Unit</th>
       <th scope="col">칼로리</th>
       <th scope="col">단백질</th>
       <th scope="col">지방</th>
@@ -48,13 +46,14 @@
   <tbody>
     {% for i in data %}
     <tr>
-      <th scope="row">{{ i }}</th>
-      <td name>{{ food_name }}</td>
-      <td>{{ food_qua }}</td>
-      <td>{{ food_cal }}</td>
-      <td>{{ food_pro }}</td>
-      <td>{{ food_fat }}</td>
-      <td>{{ food_carb }}</td>
+      <th scope="row">#</th>
+      <td name>{{ i.fields.item_name }}</td>
+      <td>{{ i.fields.nf_serving_size_qty }}</td>
+      <td>{{ i.fields.nf_serving_size_unit }}</td>
+      <td>{{ i.fields.nf_calories }}</td>
+      <td>{{ i.fields.nf_protein }}</td>
+      <td>{{ i.fields.nf_total_fat }}</td>
+      <td>{{ i.fields.nf_total_carbohydrate }}</td>
       <td>
         <button type="button" class="btn btn-primary select-btn" data-toggle="modal" data-target="#staticBackdrop"
           id="{{ forloop.counter }}">
