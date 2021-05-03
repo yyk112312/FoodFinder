@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView
 
 class exerciseList(ListView):
     model = Exercise
-    paginate_by = 8
+    paginate_by = 6
     template_name = 'Exercise.html'
 
     def get_queryset(self):

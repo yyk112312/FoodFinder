@@ -1,6 +1,5 @@
-{% extends 'index.html' %}
+
 {% load static %}
-{% block contents %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,48 +8,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
-    {% block style %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">    {% block style %}
     {% endblock style %}
     <title></title>
   </head>
   <body>
     {% block content %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark font-weight-bold">
-      <a class="navbar-brand" href="/"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div style="margin: 0px auto;">
-          {% block nav %}
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'main' %}">홈으로 <span class="sr-only">(current)</span></a>
-            </li>
-           <li class="nav-item">
-    <a class="nav-link" href="{% url 'home' %}">나의 칼로리 <span class="sr-only">(current)</span></a>
-  </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'profile' %}">회원정보</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'select_food' %}">음식 찾기</Select></a>
-            </li>
-          </ul>
-          {% endblock nav %}
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Ways to manage sugar, Lower sugar recipes, New ideas to life, Health is the most precious">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link rel="stylesheet" href='{% static "nicepage.css" %}' media="screen">
+      <link rel="stylesheet" href='{% static "about.css" %}' media="screen">
+      <link rel="stylesheet" href='{% static "foodboard.css" %}' media="screen">
+      <link rel="stylesheet" href='{% static "foodboardDetail.css" %}' media="screen">
+      <link rel="stylesheet" href='{% static "Exercise.css" %}' media="screen">
+      <link rel="stylesheet" href='{% static "ExerciseDetail.css" %}' media="screen">
+      <link rel="stylesheet" href='{% static "Pic" %}' media="screen">
+      <link rel="stylesheet" href='{% static "picresult.css" %}' media="screen">
+      <link rel="stylesheet" href='{% static "result1.css" %}' media="screen">
+
+    <script class="u-script" type="text/javascript" src='{% static "jquery.js" %}' defer=""></script>
+    <script class="u-script" type="text/javascript" src='{% static "nicepage.js" %}' defer=""></script>
+    <meta name="generator" content="Nicepage 3.11.0, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700">
+
+
+
+
+
+
+
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "index.html",
+		"logo": "#"
+}</script>
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#a68053">
+    <link rel="canonical" href="index.html">
+    <meta property="og:url" content="index.html">
+  </head>
+  <body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-overlap">
+  <header class="u-clearfix u-header u-header" id="sec-46b8"><div class="u-clearfix u-sheet u-sheet-1">
+      <br>
+        <nav class="u-align-left u-menu u-menu-dropdown u-nav-spacing-25 u-offcanvas u-menu-1" data-responsive-from="XL">
+          <div class="menu-collapse">
+            <a class="u-button-style u-nav-link u-text-black" href="#" style="font-size: calc(1em + 20px); padding: 10px 18px;">
+              <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7b92"></use></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg-7b92" x="0px" y="0px" viewBox="0 0 302 302" style="enable-background:new 0 0 302 302;" xml:space="preserve" class="u-svg-content"><g><rect y="36" width="302" height="30"></rect><rect y="236" width="302" height="30"></rect><rect y="136" width="302" height="30"></rect>
+</g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+            </a>
           </div>
-          <ul class="nav justify-content-end">
-            <li class="nav-item">
-              <a href="{% url 'logout' %}" class="btn btn-outline-danger text-white">Logout</a>
-            </li>
-          </ul>
-        
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/" style="padding: 8px 0px;">Home</a>
+    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/about" style="padding: 8px 0px;">About</a>
+    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'profile' %}" style="padding: 8px 0px;">MyPage</a>
+    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'foodboard:food_list' %}" style="padding: 8px 0px;">Foodboard</a>
+    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/maps" style="padding: 8px 0px;">Maps</a>
+    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/exercise" style="padding: 8px 0px;">Exercise</a>
+    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'imagecla:upload_file' %}" style="padding: 8px 0px;">Pic</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'photo:index' %}" style="padding: 8px 0px;">Community</a>
+                   </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/check" style="padding: 8px 0px;">Calculator</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'suggestfood:suggestfood' %}" style="padding: 8px 0px;">Recommend</a>
+    </li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
       </div>
-    </nav>
     {% endblock content %}
+      <center>
+        <div>
+            <button class="btn btn-outline-warning" onclick="location.href='{% url 'main' %}'">홈으로 <span class="sr-only">(current)</span></button>
+            <button class="btn btn-outline-success" onclick="location.href='{% url 'home' %}'">나의 칼로리 <span class="sr-only">(current)</span></button>
+            <button class="btn btn-outline-info" onclick="location.href='{% url 'profile' %}'">회원정보</button>
+            <button class="btn btn-outline-primary" onclick="location.href='{% url 'select_food' %}'">음식 찾기</Select></button>
+        </div>
+    </center>
+      <br><br><br>
     {% for msg in messages %}
   <div class="alert alert-{{ msg.tags }} mt-1" role="alert">
     {{ msg }}
@@ -79,4 +126,3 @@
     -->
   </body>
 </html>
-{% endblock %}

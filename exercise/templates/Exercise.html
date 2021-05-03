@@ -9,6 +9,8 @@
     <meta name="keywords" content="Exercise">
     <meta name="description" content="">
     <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <title>Exercise</title>
   </head>
   <body>
@@ -31,7 +33,6 @@
             <tbody class="u-table-alt-palette-1-light-3 u-table-body">
               <tr style="height: 65px;">
                 <td class="u-table-cell"></td>
-                <td class="u-table-cell">운동 목록</td>
               </tr>
               {% for exercise in object_list %}
               <tr style="height: 65px;">
@@ -50,8 +51,41 @@
         </div>
       </div>
     </section>
+      <h3 align="center">이 주의 추천운동</h3>
+      <br>
+<div class="w3-row-padding w3-margin-top">
+  <div class="w3-third">
+    <div class="w3-card">
+      <img src="/image/running.jpg" style="width:100%">
+      <div class="w3-container">
+        <h5>Running</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <img src="/image/yoga.jpg" style="width:100%">
+      <div class="w3-container">
+        <h5>Yoga</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="w3-card">
+      <img src="/image/cycling.jpg" style="width:100%">
+      <div class="w3-container">
+        <h5>Cycling</h5>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+</div>
+  <br>
+  <br>
   </body>
 {% endblock contents %}
 </html>

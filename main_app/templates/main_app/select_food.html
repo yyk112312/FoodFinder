@@ -1,26 +1,27 @@
-{% extends 'main_app/index.html' %}
-{% block nav %}
-<ul class="navbar-nav mr-auto">
-  <li class="nav-item">
-      <li class="nav-item active">
-              <a class="nav-link" href="{% url 'main' %}">홈으로 <span class="sr-only">(current)</span></a>
-            </li>
-    <a class="nav-link" href="{% url 'home' %}">나의 칼로리 <span class="sr-only">(current)</span></a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="{% url 'profile' %}">회원정보</a>
-  </li>
-  <li class="nav-item active">
-    <a class="nav-link" href="{% url 'select_food' %}">Select Food</Select></a>
-  </li>
-</ul>
-{% endblock nav %}
-{% block main %}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/flatly/bootstrap.min.css" integrity="sha384-qF/QmIAj5ZaYFAeQcrQ6bfVMAh4zZlrGwTPY7T/M+iTTLJqJBJjwwnsE5Y0mV7QK" crossorigin="anonymous">
+<br><br>
+{% for msg in messages %}
+  <div class="alert alert-{{ msg.tags }} mt-1" role="alert">
+    {{ msg }}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{% endfor %}
+<center>
+        <div>
+            <button class="btn btn-outline-warning" onclick="location.href='{% url 'main' %}'">홈으로 <span class="sr-only">(current)</span></button>
+            <button class="btn btn-outline-success" onclick="location.href='{% url 'home' %}'">나의 칼로리 <span class="sr-only">(current)</span></button>
+            <button class="btn btn-outline-info" onclick="location.href='{% url 'profile' %}'">회원정보</button>
+            <button class="btn btn-outline-primary" onclick="location.href='{% url 'select_food' %}'">음식 찾기</Select></button>
+        </div>
+    </center>
 <h3 class="text-center my-4">추가할 음식을 입력하세요</h3>
 <div class="container card py-2 px-4 mb-4 bg-light" style="max-width: 50%;">
   <form method="POST">
     {% csrf_token %}
-    <input class="form-control my-4" type="search" placeholder="Food Item" aria-label="Search" name="food_item"
+    <input class="form-control my-4" type="search" placeholder="음식명" aria-label="Search" name="food_item"
       value="{{ food }}">
     <div class="text-center">
       <!-- <label for="go">Go</label> -->
@@ -34,8 +35,8 @@
     <tr>
       <th scope="col">번호</th>
       <th scope="col">음식</th>
-      <th scope="col">횟수</th>
-      <th scope="col">Unit</th>
+      <th scope="col">1회 제공량</th>
+
       <th scope="col">칼로리</th>
       <th scope="col">단백질</th>
       <th scope="col">지방</th>
@@ -46,14 +47,13 @@
   <tbody>
     {% for i in data %}
     <tr>
-      <th scope="row">#</th>
-      <td name>{{ i.fields.item_name }}</td>
-      <td>{{ i.fields.nf_serving_size_qty }}</td>
-      <td>{{ i.fields.nf_serving_size_unit }}</td>
-      <td>{{ i.fields.nf_calories }}</td>
-      <td>{{ i.fields.nf_protein }}</td>
-      <td>{{ i.fields.nf_total_fat }}</td>
-      <td>{{ i.fields.nf_total_carbohydrate }}</td>
+      <th scope="row">{{ i }}</th>
+      <td name>{{ food_name }}</td>
+      <td>{{food_qua}}g</td>
+      <td>{{ food_cal }}</td>
+      <td>{{ food_pro }}</td>
+      <td>{{ food_fat }}</td>
+      <td>{{ food_carb }}</td>
       <td>
         <button type="button" class="btn btn-primary select-btn" data-toggle="modal" data-target="#staticBackdrop"
           id="{{ forloop.counter }}">
@@ -104,7 +104,10 @@
   </div>
 </div>
 
-{% endblock main %}
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <!-- {% block script %}
 <script>
     $(function(){

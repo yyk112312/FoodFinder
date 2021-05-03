@@ -58,11 +58,11 @@
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'foodboard:food_list' %}" style="padding: 8px 0px;">Foodboard</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/maps" style="padding: 8px 0px;">Maps</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/exercise" style="padding: 8px 0px;">Exercise</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'imagecla:upload_file' %}" style="padding: 8px 0px;">사진분석</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'photo:index' %}" style="padding: 8px 0px;">커뮤니티</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/check" style="padding: 8px 0px;">칼로리계산기</a>
-</li> </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'suggestfood:suggestfood' %}" style="padding: 8px 0px;">추천시스템</a>
-    </li></ul>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'imagecla:upload_file' %}" style="padding: 8px 0px;">Pic</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'photo:index' %}" style="padding: 8px 0px;">Community</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/check" style="padding: 8px 0px;">Calculator</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'suggestfood:suggestfood' %}" style="padding: 8px 0px;">Recommend</a>
+</li></ul>
               </div>
             </div>
             <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
@@ -74,38 +74,38 @@
       <div class="u-clearfix u-sheet u-valign-middle-md u-sheet-1">
         <div class="u-align-left u-container-style u-group u-group-1">
           <div class="u-container-layout u-valign-middle u-container-layout-1">
-            <h1 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-title u-text-1">FoodFinder</h1>
-            <p class="u-large-text u-text u-text-grey-50 u-text-variant u-text-2">다양한 기능을 통해 고객들의 편리함을 위해 제작된 프로젝트</p>
+            <h1 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-title u-text-1" style="font-family: 'twayair'">FoodFinder</h1>
+            <p class="u-large-text u-text u-text-grey-50 u-text-variant u-text-2" style="font-family: 'twayair'">다양한 기능을 통해 고객들의 편리함을 위해 제작된 프로젝트</p>
           <br>
               <br>
               {% block menu %}
 {% if user.is_authenticated %}
 {% if user.is_staff %}
-<div align="left" class="u-large-text u-text u-text-black u-text-variant u-text-2">
+<div align="left" class="u-large-text u-text u-text-black u-text-variant u-text-2" style="font-family: 'twayair'">
     <a>{{ user.username }}님 환영합니다.</a>
     <br>
     <br>
-    <a href="{% url 'logout' %}" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1" >로그아웃</a>
+    <a href="{% url 'logout' %}" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1" style="font-family: 'twayair'">로그아웃</a>
     &nbsp; &nbsp;
-    <a href="{% url 'profile' %}" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1">마이페이지</a>
+    <a href="{% url 'profile' %}" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1" style="font-family: 'twayair'">마이페이지</a>
     &nbsp; &nbsp;
-    <a href="/admin" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1">관리자</a>
+    <a href="/admin" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1" style="font-family: 'twayair'">관리자</a>
     &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
 </div>
 {% else %}
-<div align="left" class="u-large-text u-text u-text-black u-text-variant u-text-2">
+<div align="left" class="u-large-text u-text u-text-black u-text-variant u-text-2" style="font-family: 'twayair'">
 <a>{{ user.username }}님 환영합니다.</a>
     <br>
     <br>
-    <a href="{% url 'logout' %}" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1">LOGOUT</a>
+    <a href="{% url 'logout' %}" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1" style="font-family: 'twayair'">LOGOUT</a>
     &nbsp; &nbsp;
-    <a href="{% url 'profile' %}" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1">Mypage</a>
+    <a href="{% url 'profile' %}" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1" style="font-family: 'twayair'">Mypage</a>
     &nbsp; &nbsp;
 </div>
 {% endif %}
 {% else %}
 <div align="left">
-<div class="col-md-1 col-sm-2 col-xs-2">
+<div class="col-md-1 col-sm-2 col-xs-2" style="font-family: 'twayair'">
      <a href="{% url 'login' %}" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1">LOGIN</a>
 </div>
     </div>
@@ -168,103 +168,19 @@
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-section-3" id="sec-b0f8">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-align-center u-container-style u-group u-group-1">
-          <div class="u-container-layout u-valign-middle u-container-layout-1">
-            <h2 class="u-text u-text-1">Lower sugar recipes</h2>
-            <p class="u-text u-text-2">As we go about our hectic, busy days, it can be very easy to resort to a sugary snack midway through the afternoon to keep your energy levels elevated. </p>
-          </div>
-        </div>
-        <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
-          <div class="u-gutter-0 u-layout">
-            <div class="u-layout-col">
-              <div class="u-size-30">
-                <div class="u-layout-row">
-                  <div class="u-container-style u-image u-layout-cell u-left-cell u-size-20">
-                    <div class="u-container-layout" ><img src="static/images/camera.png" height="50" width="50"></div>
-                  </div>
-                  <div class="u-container-style u-image u-layout-cell u-size-20 u-image-2">
-                    <div class="u-container-layout"></div>
-                  </div>
-                  <div class="u-container-style u-image u-layout-cell u-right-cell u-size-20 u-image-3">
-                    <div class="u-container-layout"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="u-size-30">
-                <div class="u-layout-row">
-                  <div class="u-container-style u-image u-layout-cell u-left-cell u-size-20 u-image-4">
-                    <div class="u-container-layout"></div>
-                  </div>
-                  <div class="u-container-style u-image u-layout-cell u-size-20 u-image-5">
-                    <div class="u-container-layout"></div>
-                  </div>
-                  <div class="u-container-style u-image u-layout-cell u-right-cell u-size-20 u-image-6">
-                    <div class="u-container-layout"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-grey-5 u-section-4" id="sec-c790">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <div class="u-align-center-lg u-align-center-sm u-align-center-xl u-align-center-xs u-container-style u-expanded-width u-group u-group-1">
-          <div class="u-container-layout u-valign-middle u-container-layout-1">
-            <h2 class="u-align-center-md u-text u-text-1">New ideas to life</h2>
-            <p class="u-align-center-md u-text u-text-2">While it is important to have naturally occurring sugars in your diet, many foods contain harmful added sugars that contain no nutritional value.&nbsp; According to a study conducted by the University of Florida, the brain releases
-                        heroin-like chemicals called endogenous opioids when an individual indulges on sweet, salty or fatty foods.&nbsp;</p>
-          </div>
-        </div>
-        <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
-          <div class="u-gutter-0 u-layout">
-            <div class="u-layout-row">
-              <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-15 u-size-30-md u-layout-cell-1">
-                <div class="u-container-layout u-valign-top u-container-layout-2" data-image-width="2000" data-image-height="1333">
-                  <h4 class="u-custom-font u-heading-font u-text u-text-3">Eat plenty of protein</h4>
-                  <p class="u-text u-text-grey-50 u-text-4">Eating a healthy dose of protein, such as red meat, organic chicken and fish, in addition to healthy fats including avocado and coconut oil can help keep&nbsp;</p>
-                </div>
-              </div>
-              <div class="u-align-left u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-2">
-                <div class="u-container-layout u-valign-top u-container-layout-3" data-image-width="2000" data-image-height="1333">
-                  <h4 class="u-custom-font u-heading-font u-text u-text-5">Eat wholesome snacks</h4>
-                  <p class="u-text u-text-grey-50 u-text-6">One of the reasons why so many people end up eating unhealthy snacks is simply because they don’t consider taking the time to source healthier alternatives.&nbsp;</p>
-                </div>
-              </div>
-              <div class="u-align-left u-container-style u-layout-cell u-size-15 u-size-30-md u-layout-cell-3">
-                <div class="u-container-layout u-valign-top u-container-layout-4" data-image-width="2000" data-image-height="1333">
-                  <h4 class="u-custom-font u-heading-font u-text u-text-7">Consume magnesium</h4>
-                  <p class="u-text u-text-grey-50 u-text-8">Sepel is a strong proponent of magnesium, personally taking approximately 500mg a night to help moderate her blood glucose levels. Magnesium can also be naturally found&nbsp;</p>
-                </div>
-              </div>
-              <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-size-30-md u-layout-cell-4">
-                <div class="u-container-layout u-valign-top u-container-layout-5" data-image-width="2000" data-image-height="1333">
-                  <h4 class="u-custom-font u-heading-font u-text u-text-9">Practise mindfulness</h4>
-                  <p class="u-text u-text-grey-50 u-text-10">Sugar cravings are often connected with overall stress levels, which is why practising mindfulness could prove extremely beneficial. <br>Take some time out of
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="https://www.independent.co.uk/life-style/health-and-families/sugar-cravings-how-to-stop-after-meal-naturally-at-night-nutritionist-advice-a8382146.html" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1" target="_blank">read more</a>
-      </div>
-    </section>
     <section class="u-clearfix u-section-5" id="sec-64dc">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-gutter-30 u-layout-spacing-top u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
+          <div class="u-layout" align="center">
+              <h2 style="font-family: 'twayair'">이런 다이어트는 어때요?</h2>
             <div class="u-layout-row">
               <div class="u-align-left u-container-style u-image u-layout-cell u-left-cell u-size-15 u-size-30-md u-image-1" src="">
                 <div class="u-container-layout" src=""></div>
               </div>
               <div class="u-align-left u-container-style u-layout-cell u-size-15 u-size-30-md u-white u-layout-cell-2">
                 <div class="u-border-2 u-border-palette-3-base u-container-layout u-valign-middle u-container-layout-2">
-                  <h4 class="u-custom-font u-heading-font u-text u-text-1">Have a healthy afternoon snack</h4>
-                  <p class="u-text u-text-2">The majority of people in the working world are likely familiar with the mid-afternoon slump.</p>
+                  <h4 class="u-custom-font u-heading-font u-text u-text-1" style="font-family: 'twayair'">Paleo Diet</h4>
+                  <p class="u-text u-text-2" style="font-family: 'twayair'">수렵, 채집 생활을 하던 원시 시대 인류의 식단과 식습관을 따르는 방식의 다이어트로 단백질과 식이섬유를 풍부하게 섭취하는 다이어트 방식이다. <br>가공식품이나 설탕, 유제품, 곡류의 섭취를 제한하고 고기를 비롯한 채소, 과일, 견과류 등을 자연식품의 상태로 섭취해 탄수화물 섭취를 줄이고 건강한 단백질 섭취량을 늘린다.</p>
                 </div>
               </div>
               <div class="u-align-left u-container-style u-image u-layout-cell u-size-15 u-size-30-md u-image-2" src="">
@@ -272,8 +188,8 @@
               </div>
               <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-15 u-size-30-md u-white u-layout-cell-4">
                 <div class="u-border-2 u-border-palette-3-base u-container-layout u-valign-middle u-container-layout-4">
-                  <h4 class="u-custom-font u-heading-font u-text u-text-3">Include lots of fibre in your diet </h4>
-                  <p class="u-text u-text-4">Fibre is known to help aid with digestion. However, that’s not its only benefit.</p>
+                  <h4 class="u-custom-font u-heading-font u-text u-text-3" style="font-family: 'twayair'">Atkins Diet</h4>
+                  <p class="u-text u-text-4" style="font-family: 'twayair'">저탄수화물 고단백질 다이어트법의 시초가 되는 다이어트로 기본적으로 탄수화물을 피하기만 하면 단백질과 지방을 자유롭게 먹을 수 있어 많은 이들이 시도한다. <br><br>앳킨스 다이어트법은 세 가지 방식으로 나뉘는데 가장 널리 알려진 것은 일일 탄수화물 섭취량을 20g으로 줄인 뒤 단계별로 섭취량을 100g까지 늘려 줄어든 몸무게를 유지하는 방법이다.</p>
                 </div>
               </div>
             </div>
@@ -295,7 +211,6 @@
                   <br>많은 사람들이 집에서 맛있는 음식을 해서 먹지만 그 음식에 대한 칼로리는 자세하게 판단할 수 가 없는 상황입니다. 만약 음식에 대한 칼로리를 알고 자신에게 필요한 칼로리,영양정보가 얼마인지 알 수 있다면 더 좋지 않을까?<br>
                   <br>또한 이러한 정보들을 저장해서 고객에게 맞춤 운동서비스 , 음식서비스를 추천하고자 하는 것이 저희의 목적입니다.
                 </p>
-                <a href="" class="u-border-2 u-border-palette-3-base u-btn u-btn-round u-button-style u-radius-50 u-text-grey-50 u-btn-1" target="_blank" style="font-family: 'twayair'">사용시작하기</a>
               </div>
             </div>
           </div>

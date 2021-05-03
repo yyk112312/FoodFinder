@@ -43,7 +43,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Maps&nbsp;
-	
+
 
 ​">
     <meta name="description" content="">
@@ -73,7 +73,7 @@ var markers = [];
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
     mapOption = {
         center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
+        level: 5 // 지도의 확대 레벨
     };
 
 // 지도를 생성합니다
@@ -355,10 +355,16 @@ function displayMarker(locPosition, message) {
                 <div class="u-menu-close"></div>
                 <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/" style="padding: 8px 0px;">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/about" style="padding: 8px 0px;">About</a>
+                                        {% if user.is_authenticated %}
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'profile' %}" style="padding: 8px 0px;">MyPage</a>
+                    {% endif %}
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'foodboard:food_list' %}" style="padding: 8px 0px;">Foodboard</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/maps" style="padding: 8px 0px;">Maps</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/exercise"style="padding: 8px 0px;">Exercise</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'imagecla:upload_file' %}" style="padding: 8px 0px;">사진분석</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'imagecla:upload_file' %}" style="padding: 8px 0px;">Pic</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'photo:index' %}" style="padding: 8px 0px;">Community</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="/check" style="padding: 8px 0px;">Calculator</a>
+                    </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'suggestfood:suggestfood' %}" style="padding: 8px 0px;">Recommend</a>
 </li></ul>
               </div>
             </div>
@@ -381,7 +387,7 @@ function displayMarker(locPosition, message) {
         <div class="option">
             <div>
                 <form onsubmit="searchPlaces(); return false;">
-                    키워드 : <input type="text" value="{{user.area}}{{user.food}}맛집" id="keyword" size="15">
+                    키워드 : <input type="text" value=" " id="keyword" size="15">
                     <button type="submit">검색하기</button>
                 </form>
             </div>

@@ -1,9 +1,12 @@
 {% extends 'index.html' %}
 {% block contents %}
 <body>
-<center> 추천사이트를 만들거에요!
-<br><a href="{% url 'suggestfood:suggest' %}">추천목록</a>
+<center>
+    <h3>회원님께 제공드리는 추천음식 목록</h3>
+<br><a href="{% url 'suggestfood:suggest' %}">목록으로</a>
+    <br><p>목록에서 확인하실 수 있습니다!</p>
 </center>
 
 </body>
+<br><br><br><br><br><br><br><br><br><br><br><br>
 {% endblock contents%}
